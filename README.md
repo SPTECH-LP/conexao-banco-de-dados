@@ -2,7 +2,7 @@
 
 > Projeto Java que demonstra como estabelecer conexão com um banco de dados relacional utilizando JDBC e Spring JDBC.
 
-## Rodando o projeto
+## 🚀 Rodando o projeto
 
 ### Pré-requisitos
 
@@ -27,15 +27,15 @@
     - [Update](#update)
 - [Referências](#referências)
 
-## O que é JDBC?
+## 📚 O que é JDBC?
 
 JDBC (Java Database Connectivity) é uma API que permite a execução de operações em bancos de dados a partir de aplicações Java. Através do JDBC, é possível realizar operações como consultas, inserções, atualizações e exclusões de registros em bancos de dados relacionais.
 
-### Spring JDBC
+### 🍃 Spring JDBC
 
 O Spring JDBC é um módulo do Spring Framework que facilita o uso do JDBC em aplicações Java. O Spring JDBC simplifica a configuração do acesso a bancos de dados, permitindo a execução de operações de forma mais simples e segura.
 
-## Configuração do projeto
+## 🎚️ Configuração do projeto
 
 ### Dependências
 
@@ -85,17 +85,17 @@ Cada banco de dados possui um driver JDBC específico, que deve ser adicionado a
 </dependency>
 ```
 
-## Banco de dados H2
+## 💾 Banco de dados H2
 
 O H2 é um banco de dados relacional escrito em Java, que pode ser utilizado em aplicações Java para testes e desenvolvimento. O H2 é um banco de dados leve e fácil de configurar, que pode ser executado em modo embarcado ou em modo servidor.
 
 Nesse projeto, utilizamos o H2 em modo embarcado, que permite a criação de um banco de dados temporário em memória, que é destruído ao final da execução da aplicação.
 
-### Atenção
+### 🚧 Atenção
 
 O H2 é um banco de dados temporário, que é destruído ao final da execução da aplicação. Portanto, ele não é recomendado para ambientes de produção, apenas para testes e desenvolvimento.
 
-## Utilização do JDBC
+## 🧭 Utilização do JDBC
 
 ### Estabalecendo conexão com o banco de dados
 
@@ -146,8 +146,9 @@ List<Filme> filmes = jdbcTemplate
 Exemplo com parâmetros:
 
 ```java
-List<Filme> filmes = jdbcTemplate
-        .query("SELECT * FROM filmes WHERE genero = ?", new BeanPropertyRowMapper<Filme>(), "Ação");
+List<Filme> filmes = jdbcTemplate.query(
+        "SELECT * FROM filmes WHERE genero = ?",
+        new BeanPropertyRowMapper<Filme>(), "Ação");
 ```
 
 #### Update
@@ -164,7 +165,8 @@ jdbcTemplate.update("INSERT INTO filme (nome, ano, genero, diretor) VALUES (?, ?
 Exemplo de atualização:
 
 ```java
-jdbcTemplate.update("UPDATE filme SET nome = ?, ano = ?, genero = ?, diretor = ? WHERE id = ?",
+jdbcTemplate.update(
+        "UPDATE filme SET nome = ?, ano = ?, genero = ?, diretor = ? WHERE id = ?",
         "Shrek", 2001, "Animação", "Andrew Adamson", 4);
 ```
 
@@ -174,7 +176,7 @@ Exemplo de exclusão:
 jdbcTemplate.update("DELETE FROM filmes WHERE id = ?", 4);
 ```
 
-### Referências
+### 📜 Referências
 
 * [Data access with JDBC](https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/jdbc.html)
 * [Spring JDBC - Baeldung](https://www.baeldung.com/spring-jdbc-jdbctemplate)
