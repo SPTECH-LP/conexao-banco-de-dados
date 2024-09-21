@@ -153,7 +153,7 @@ List<Filme> filmes = jdbcTemplate.query(
 
 #### Update
 
-O método `update` é utilizado para executar operações de inserção, atualização e exclusão no banco de dados. O método `update` recebe como parâmetros a operação SQL e os valores dos parâmetros da operação.
+O método `update` é utilizado para executar operações de inserção, atualização e exclusão no banco de dados. Ele recebe como parâmetros a operação SQL e os valores dos parâmetros da operação.
 
 Exemplo de inserção:
 
