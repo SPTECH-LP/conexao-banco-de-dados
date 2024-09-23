@@ -140,7 +140,7 @@ O método `query` é utilizado para executar consultas no banco de dados. O mét
 
 ```java
 List<Filme> filmes = jdbcTemplate
-        .query("SELECT * FROM filmes", new BeanPropertyRowMapper<Filme>());
+        .query("SELECT * FROM filmes", new BeanPropertyRowMapper<>(Filme.class));
 ```
 
 Exemplo com parâmetros:
@@ -148,7 +148,7 @@ Exemplo com parâmetros:
 ```java
 List<Filme> filmes = jdbcTemplate.query(
         "SELECT * FROM filmes WHERE genero = ?",
-        new BeanPropertyRowMapper<Filme>(), "Ação");
+        new BeanPropertyRowMapper<>(Filme.class), "Ação");
 ```
 
 #### Update
